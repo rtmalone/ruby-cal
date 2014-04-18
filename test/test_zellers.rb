@@ -1,12 +1,12 @@
-require 'test/unit'
-require_relative 'helper'
+#require 'test/unit'
+require 'helper'
 require 'zellers'
 
 class TestZellers < MiniTest::Unit::TestCase
 
   # Easy wins...
 
-  def test_01_zellers_has_can_see_method
+  def test_01_zellers_can_see_method
     assert Zellers.respond_to? :calculate
   end
 

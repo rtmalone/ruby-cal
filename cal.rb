@@ -1,4 +1,3 @@
-class Cal
+#!/usr/bin/env ruby
 
-
-end
+puts "Hello Ruby!"

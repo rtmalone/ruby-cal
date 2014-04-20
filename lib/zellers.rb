@@ -14,10 +14,8 @@ class Zellers
     if m < 3
       m += 12
       y -= 1
-      weekday = (1 + (((m+1)*26)/10) + y + (y/4) + (6*(y/100)) + (y/400)) % 7
-    else
-      weekday = (1 + ((13*(m+1))/5) + k + (k/4) + (j/4) + (5*j) ) % 7
     end
+    weekday = (1 + (((m+1)*26)/10) + y + (y/4) + (6*(y/100)) + (y/400)) % 7
     #weekday -= 1
   end
 

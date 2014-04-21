@@ -1,7 +1,7 @@
 require_relative 'helper'
 require 'month'
 
-class TestMonth < MiniTest::Unit::TestCase
+class TestMonth < Test::Unit::TestCase
 
   def test_01_month_can_see_method
     assert Month.respond_to? :new

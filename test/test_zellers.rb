@@ -2,7 +2,7 @@
 require 'helper'
 require 'zellers'
 
-class TestZellers < MiniTest::Unit::TestCase
+class TestZellers < Test::Unit::TestCase
 
   # Easy wins...
 

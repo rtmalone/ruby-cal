@@ -35,13 +35,13 @@ class Month
   def print
     #print both header and the result from format_body
     puts "#{month_name} #{year}".center(20).rstrip
-    puts "Su Mo Tu We Th Fr Sa" #.match(/\s$/) ? "yes" : "no"
+    puts "Su Mo Tu We Th Fr Sa"
     format_body.each_with_index do |line, index|
       converted_line = line.map do |day|
         @count_index = index
         day.to_s.rjust(2)
       end
-      puts converted_line.join(" ") #.match(/\s$/) ? "yes" : "no"
+      puts converted_line.join(" ")
     end
     if @count_index < 5 && @count_index != 3
       puts "\n"

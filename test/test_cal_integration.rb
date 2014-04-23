@@ -51,4 +51,12 @@ class CalTest < Test::Unit::TestCase
     actual = `./cal 3 2015`
     assert_equal expected, actual
   end
+
+  #------- Year Tests
+
+  def test_09_cal_2014
+    expected = `cal 2014`
+    actual = `./cal 2014`
+    assert_equal expected, actual
+  end
 end

@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 $LOAD_PATH << 'lib'
 require 'month'
-#puts "Hello Ruby!"
-Month.new(ARGV[0].to_i, ARGV[1].to_i).to_s
+require 'year'
+
+case ARGV.length
+when 1
+  Year.new(ARGV[0].to_i).year_to_s
+when 2
+  Month.new(ARGV[0].to_i, ARGV[1].to_i).month_to_s
+end

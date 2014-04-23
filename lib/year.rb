@@ -9,6 +9,7 @@ class Year
 
   def year_to_s
     puts title
+    puts 
     puts month_qrtrs(1,2,3)
     puts month_qrtrs(4,5,6)
     puts month_qrtrs(7,8,9)

@@ -1,4 +1,3 @@
-#require_relative 'helper'
 class Zellers
 
   def self.calculate(input_month, input_year)
@@ -16,7 +15,6 @@ class Zellers
       y -= 1
     end
     weekday = (1 + (((m+1)*26)/10) + y + (y/4) + (6*(y/100)) + (y/400)) % 7
-    #weekday -= 1
   end
 
   def self.leap_year?(year)
@@ -30,5 +28,4 @@ class Zellers
       false
     end
   end
-
 end

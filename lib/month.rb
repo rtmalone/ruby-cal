@@ -42,13 +42,8 @@ class Month
         day.to_s.rjust(2)
       end
       puts converted_line.join(" ").rstrip
-      #puts result_line.gsub(/\s{2}\n/, "\n")
     end
   end
-
-  #def print_month
-  #   month_to_s
-  #end
 
   def build_for_to_year
     format_body.each do |line|

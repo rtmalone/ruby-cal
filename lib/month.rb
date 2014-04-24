@@ -2,6 +2,7 @@ require 'zellers'
 
 class Month
   attr_reader :month, :year, :first_wkday_of_month, :days_in_month
+  DEFAULT_MONTH_WIDTH = 20
 
   def initialize(month, year)
     @month = month
@@ -20,10 +21,12 @@ class Month
   def format_body
     #convert to ISO date
     d = ((@first_wkday_of_month+5) % 7) + 1
+
     #reset for Sunday
     if d == 7
       d = 0
     end
+
     #returns very long array
     padding = Array.new(d, nil)
     result = (padding + array_of_days).each_slice(7).to_a
@@ -34,32 +37,22 @@ class Month
   end
 
   def month_to_s
-    #print both header and the result from format_body
-    puts "#{month_name} #{year}".center(20).rstrip
-    puts "Su Mo Tu We Th Fr Sa"
+    print "#{month_name} #{year}".center(DEFAULT_MONTH_WIDTH).rstrip + "\n"
+    print "Su Mo Tu We Th Fr Sa" + "\n"
     format_body.each do |line|
       converted_line = line.map do |day|
         day.to_s.rjust(2)
       end
-      puts converted_line.join(" ").rstrip
-    end
-  end
-
-  def build_for_to_year
-    format_body.each do |line|
-      converted_line = line.map do |day|
-        day.to_s.rjust(2)
-      end
-      converted_line.join(" ")
+      print converted_line.join(" ").rstrip + "\n"
     end
   end
 
   #build a month for year cal output
   def to_year
     month_obj = []
-    month_obj << "#{month_name}".center(20)
+    month_obj << "#{month_name}".center(DEFAULT_MONTH_WIDTH)
     month_obj << "Su Mo Tu We Th Fr Sa"
-    month_obj.concat(build_for_to_year)
+    month_obj.concat(format_body)
   end
 
   private

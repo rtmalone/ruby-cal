@@ -1,7 +1,6 @@
-require 'Month'
-
 class Year
   attr_reader :year
+  YEAR_WIDTH = 64
 
   def initialize(year)
     @year = year
@@ -9,7 +8,7 @@ class Year
 
   def year_to_s
     puts title
-    puts 
+    puts
     puts month_qrtrs(1,2,3)
     puts month_qrtrs(4,5,6)
     puts month_qrtrs(7,8,9)
@@ -19,7 +18,7 @@ class Year
   private
 
   def title
-    @year.to_s.center(64).rstrip
+    @year.to_s.center(YEAR_WIDTH).rstrip
   end
 
   def new_month(month, year)
@@ -29,7 +28,7 @@ class Year
 
   def month_qrtrs(one, two, three)
     row = new_month(one, @year).zip(new_month(two, @year), new_month(three, @year))
-    row.map {|line| line.join(" ")}
+    row.map {|line| line.join(" ")}.join("\n")
   end
 
 end
